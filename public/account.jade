@@ -1,0 +1,116 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Account Profile
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/style.css')
+  body
+    // Header
+    include header
+
+    // Content
+    .container.main-container
+      .columns
+        .column.is-3
+          aside.menu
+            p.menu-label
+              | General
+            ul.menu-list
+              li
+                a.is-active(href='account.html') Account Profile
+              li
+                a(href='driver.html') Driver Detail
+            p.menu-label
+              | Transactions
+            ul.menu-list
+              li
+                a(href='#') Payment Information
+              li
+                a(href='#') Payment History
+
+        .column
+          .content
+            #page-signup
+              h2 Basic Information
+              .control.is-horizontal
+                .control-label
+                  label.label Name
+                .control
+                  input.input(type='text', value='Will Ansell')
+              .control.is-horizontal
+                .control-label
+                  label.label E-mail
+                .control
+                  input.input(type='text', value='WillAnsell@jourrapide.com')
+
+              .control.is-horizontal
+                .control-label
+                  label.label Phone
+                .control
+                  input.input(type='text', value='04069123456')
+
+              h2 Address
+              .control.is-horizontal
+                .control-label
+                  label.label Home Address
+                .control
+                  div
+                    input.input#home-address(type='text')
+                    #home(style='width: 500px; height: 300px;')
+
+              .control.is-horizontal
+                .control-label
+                  label.label Work Address
+                .control
+                  div
+                    input.input#work-address(type='text')
+                    #work(style='width: 500px; height: 300px;')
+
+              .control.is-horizontal
+                .control-label
+                  label.label Morning Arrival Time (To Workplace)
+                .control
+                  .select.is-fullwidth
+                    select(name='#', id='#')
+                      option(value='8', selected='selected') 8:00 - 8:10 AM
+                      option(value='9') 8:10 - 8:20 AM
+                      option(value='10') 8:20 - 8:30 AM
+                      option(value='11') 8:30 - 8:40 AM
+                      option(value='11') 8:30 - 8:40 AM
+                      option(value='11') 8:40 - 8:50 AM
+                      option(value='11') 9:00 - 9:10 AM
+                      option(value='11') 9:10 - 9:20 AM
+                      option(value='11') 9:20 - 9:30 AM
+                      option(value='11') 9:30 - 9:40 AM
+                      option(value='11') 9:40 - 9:50 AM
+                      option(value='11') 9:50 - 10:00 AM
+
+              .control.is-horizontal
+                .control-label
+                  label.label Evening Leaving Time (From Workplace)
+                .control
+                  .select.is-fullwidth
+                    select(name='#', id='#')
+                      option(value='8', selected='selected') 6:00 - 6:10 PM
+                      option(value='9') 6:10 - 6:20 PM
+                      option(value='10') 6:20 - 6:30 PM
+                      option(value='11') 6:30 - 6:40 PM
+                      option(value='11') 6:30 - 6:40 PM
+                      option(value='11') 6:40 - 6:50 PM
+                      option(value='11') 7:00 - 7:10 PM
+                      option(value='11') 7:10 - 7:20 PM
+                      option(value='11') 7:20 - 7:30 PM
+                      option(value='11') 7:30 - 7:40 PM
+                      option(value='11') 7:40 - 7:50 PM
+                      option(value='11') 7:50 - 8:00 PM
+
+              .control.is-horizontal
+                .control-label
+                  label.label &nbsp;
+                .control
+                  button.button.is-success
+                    | Save
+
+    include footer

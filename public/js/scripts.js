@@ -1,3 +1,16 @@
+$(document).ready(function() {
+  // Driver Page
+  $('input[type=radio][name=question]').change(function() {
+    if (this.value == 'yes') {
+      $('.taxi-info').slideDown();
+    }
+    else if (this.value == 'no') {
+      $('.taxi-info').slideUp();
+    }
+  });
+});
+
+
 // FB Authentication
 var provider = new firebase.auth.GoogleAuthProvider();
 var $name = document.getElementById('name');

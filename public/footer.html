@@ -1,0 +1,50 @@
+
+<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js">
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyD-imT9j3NzqFW2EQplw9na_r13tptUXgA",
+      authDomain: "mastercard-hack.firebaseapp.com",
+      databaseURL: "https://mastercard-hack.firebaseio.com",
+      storageBucket: "mastercard-hack.appspot.com",
+      messagingSenderId: "794522015849"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDycamY0vc0yQq6s3ih0rCaJrIxM1-HIs&amp;libraries=places"></script>
+  <script src="js/locationpicker.jquery.js"></script>
+  <script src="js/scripts.js"></script>
+  <script>
+    $('#home').locationpicker({
+    onchanged: function(currentLocation, radius, isMarkerDropped) {
+    console.log(currentLocation.latitude, currentLocation.longitude)
+    },
+    location: {
+    latitude: 46.15242437752303,
+    longitude: 2.7470703125
+    },
+    radius: 0,
+    inputBinding: {
+    locationNameInput: $('#home-address')
+    },
+    zoom: 18,
+    enableAutocomplete: true
+    });
+    $('#work').locationpicker({
+    onchanged: function(currentLocation, radius, isMarkerDropped) {
+    console.log(currentLocation.latitude, currentLocation.longitude)
+    },
+    location: {
+    latitude: 46.15242437752303,
+    longitude: 2.7470703125
+    },
+    radius: 0,
+    inputBinding: {
+    locationNameInput: $('#work-address')
+    },
+    zoom: 18,
+    enableAutocomplete: true
+    });
+  </script>
+</script>

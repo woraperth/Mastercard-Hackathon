@@ -1,0 +1,124 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Account Profile
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/style.css')
+  body
+    // Header
+    include header
+
+    // Content
+    .container.main-container
+      .columns
+        .column.is-3
+          aside.menu
+            p.menu-label
+              | General
+            ul.menu-list
+              li
+                a(href='account.html') Account Profile
+              li
+                a.is-active(href='driver.html') Driver Detail
+            p.menu-label
+              | Transactions
+            ul.menu-list
+              li
+                a(href='#') Payment Information
+              li
+                a(href='#') Payment History
+
+        .column
+          .content
+            #page-signup
+              h2 Driver Detail
+              .control.is-horizontal
+                .control-label
+                  label.label Car Model
+                .control
+                  .select.is-fullwidth
+                    select(name='#', id='#')
+                      option(value='#') Ford EcoSport SUV
+                      option(value='#') Ford Everest SUV
+                      option(value='#') Ford Falcon Sedan
+                      option(value='#') Ford Falcon Ute
+                      option(value='#') Ford Fiesta Hatch
+                      option(value='#') Ford Kuga SUV
+                      option(value='#') Ford Focus Sedan
+                      option(value='#') Toyota Yaris
+                      option(value='#') Toyota Prius
+                      option(value='#') Toyota Prius v
+                      option(value='#') Toyota Prius c i-Tech
+                      option(value='#') Toyota Camry
+                      option(value='#') Toyota 86
+                      option(value='#') Toyota Aurion
+              .control.is-horizontal
+                .control-label &nbsp;
+                .control
+                  img(src="http://i.imgur.com/pdLw6Gk.png", alt="", style="width:502px; height: 200px;")
+              .control.is-horizontal
+                .control-label
+                  label.label Capacity
+                .control
+                  input.input(type='text', value='3')
+
+              .control.is-horizontal
+                .control-label
+                  label.label Driver License
+                .control
+                  input.input(type='text', value='04069123456')
+
+              .control.is-horizontal
+                .control-label
+                  label.label License Plate
+                .control
+                  input.input(type='text', value="AA1020")
+
+              .control.is-horizontal
+                .control-label
+                  label.label Last Service Date 
+                .control
+                  input.input(type='text', value="30/07/2016")
+
+              .control.is-horizontal
+                .control-label
+                  label.label Payment Detail
+                .control
+                  textarea.textarea(placeholder="Your payment detail")
+
+              h2 Taxi Detail
+              .control.is-horizontal
+                .control-label
+                  label.label Are you taxi?
+                .control
+                  p.push
+                    label.radio
+                      input(type='radio', name='question', value="yes", checked="checked")
+                      |     Yes
+                    label.radio
+                      input(type='radio', name='question', value="no")
+                      |     No
+
+              .taxi-info
+                .control.is-horizontal
+                  .control-label
+                    label.label Driver ID
+                  .control
+                    input.input(type"text", value="001030201")
+
+                .control.is-horizontal
+                  .control-label
+                    label.label Taxi ID
+                  .control
+                    input.input(type"text", value="209591")
+
+              .control.is-horizontal
+                .control-label
+                  label.label &nbsp;
+                .control
+                  button.button.is-success
+                    | Save
+
+    include footer

@@ -2,30 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Test</title>
+    <title>Account Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <!-- Header-->
-    <section class="hero is-primary is-large">
+    <section class="hero is-primary">
       <!-- Hero header: will stick at the top-->
       <div class="hero-head">
         <header class="nav">
           <div class="container">
             <div class="nav-left"><a class="nav-item">
-                <h1>WORK SCHOOL BUS</h1></a></div><span class="nav-toggle"><span></span><span></span><span></span></span>
-            <div class="nav-right nav-menu"><a class="nav-item is-active">Home</a><a class="nav-item">How it works?</a><a class="nav-item">About Us</a><span class="nav-item"><a class="button is-info is-inverted"><span>Register</span></a><a class="button is-info is-inverted"><span>Login</span></a></span></div>
+                <h1>Ride with me</h1></a></div><span class="nav-toggle"><span></span><span></span><span></span></span>
+            <div class="nav-right nav-menu"><a class="nav-item is-active">Home</a><a class="nav-item">How it works?</a><a class="nav-item">About Us</a><span class="nav-item"><a href="account.html" class="button is-primary is-inverted"><i class="fa fa-gear">&nbsp;</i><span>Account</span></a></span></div>
           </div>
         </header>
-      </div>
-      <!-- Hero content: will be in the middle-->
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">School Bus for Work</h1>
-          <h2 class="subtitle">Some catchy tag line</h2>
-        </div>
       </div>
     </section>
     <!-- Content-->
@@ -35,8 +28,8 @@
           <aside class="menu">
             <p class="menu-label">General</p>
             <ul class="menu-list">
-              <li><a href="#" class="is-active">Account Profile</a></li>
-              <li><a href="#">Driver Detail</a></li>
+              <li><a href="account.html" class="is-active">Account Profile</a></li>
+              <li><a href="driver.html">Driver Detail</a></li>
             </ul>
             <p class="menu-label">Transactions</p>
             <ul class="menu-list">
@@ -151,94 +144,64 @@
                 </div>
               </div>
             </div>
-            <div id="page-signup-driver">
-              <h2>Driver Detail</h2>
-              <p>Car Model 
-                <select name="#" id="#">
-                  <option value="#">Ford EcoSport SUV</option>
-                  <option value="#">Ford Everest SUV</option>
-                  <option value="#">Ford Falcon Sedan</option>
-                  <option value="#">Ford Falcon Ute</option>
-                  <option value="#">Ford Fiesta Hatch</option>
-                  <option value="#">Ford Kuga SUV</option>
-                  <option value="#">Ford Focus Sedan</option>
-                  <option value="#">Toyota Yaris</option>
-                  <option value="#">Toyota Prius</option>
-                  <option value="#">Toyota Prius v</option>
-                  <option value="#">Toyota Prius c i-Tech</option>
-                  <option value="#">Toyota Camry</option>
-                  <option value="#">Toyota 86</option>
-                  <option value="#">Toyota Aurion</option>
-                </select>
-              </p>
-              <p>Capacity (Space) 
-                <input type="text" value="3">
-              </p>
-              <p>Driver License 
-                <input type="text">
-              </p>
-              <p>License Plate 
-                <input type="text">
-              </p>
-              <p>Last Service Date 
-                <input type="date">
-              </p>
-              <p>Payment Detail 
-                <textarea name="#" id="#" cols="30" rows="10"></textarea>
-              </p>
-            </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js">
-      <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyD-imT9j3NzqFW2EQplw9na_r13tptUXgA",
-          authDomain: "mastercard-hack.firebaseapp.com",
-          databaseURL: "https://mastercard-hack.firebaseio.com",
-          storageBucket: "mastercard-hack.appspot.com",
-          messagingSenderId: "794522015849"
-        };
-        firebase.initializeApp(config);
-      </script>
-      <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
-      <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDycamY0vc0yQq6s3ih0rCaJrIxM1-HIs&amp;libraries=places"></script>
-      <script src="js/locationpicker.jquery.js"></script>
-      <script src="js/scripts.js"></script>
-      <script>
-        $('#home').locationpicker({
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>&copy; Copyright 2016 <a href="index.html">Ride with Me</a>. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD-imT9j3NzqFW2EQplw9na_r13tptUXgA",
+        authDomain: "mastercard-hack.firebaseapp.com",
+        databaseURL: "https://mastercard-hack.firebaseio.com",
+        storageBucket: "mastercard-hack.appspot.com",
+        messagingSenderId: "794522015849"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDycamY0vc0yQq6s3ih0rCaJrIxM1-HIs&amp;libraries=places"></script>
+    <script src="js/locationpicker.jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      $('#home').locationpicker({
         onchanged: function(currentLocation, radius, isMarkerDropped) {
-        console.log(currentLocation.latitude, currentLocation.longitude)
+          console.log(currentLocation.latitude, currentLocation.longitude)
         },
         location: {
-        latitude: 46.15242437752303,
-        longitude: 2.7470703125
+          latitude: -37.81676277922874,
+          longitude: 144.95917619070747
         },
         radius: 0,
         inputBinding: {
-        locationNameInput: $('#home-address')
+          locationNameInput: $('#home-address')
         },
         zoom: 18,
         enableAutocomplete: true
-        });
-        $('#work').locationpicker({
+      });
+      $('#work').locationpicker({
         onchanged: function(currentLocation, radius, isMarkerDropped) {
-        console.log(currentLocation.latitude, currentLocation.longitude)
+          console.log(currentLocation.latitude, currentLocation.longitude)
         },
         location: {
-        latitude: 46.15242437752303,
-        longitude: 2.7470703125
+          latitude: -37.9179738,
+          longitude: 145.03256080000006
         },
         radius: 0,
         inputBinding: {
-        locationNameInput: $('#work-address')
+          locationNameInput: $('#work-address')
         },
         zoom: 18,
         enableAutocomplete: true
-        });
-      </script>
+      });
     </script>
   </body>
 </html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Account Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Header-->
+    <section class="hero is-primary">
+      <!-- Hero header: will stick at the top-->
+      <div class="hero-head">
+        <header class="nav">
+          <div class="container">
+            <div class="nav-left"><a class="nav-item">
+                <h1>Ride with me</h1></a></div><span class="nav-toggle"><span></span><span></span><span></span></span>
+            <div class="nav-right nav-menu"><a class="nav-item is-active">Home</a><a class="nav-item">How it works?</a><a class="nav-item">About Us</a><span class="nav-item"><a href="account.html" class="button is-primary is-inverted"><i class="fa fa-gear">&nbsp;</i><span>Account</span></a></span></div>
+          </div>
+        </header>
+      </div>
+    </section>
+    <!-- Content-->
+    <div class="container main-container">
+      <div class="columns">
+        <div class="column is-3">
+          <aside class="menu">
+            <p class="menu-label">General</p>
+            <ul class="menu-list">
+              <li><a href="account.html">Account Profile</a></li>
+              <li><a href="driver.html" class="is-active">Driver Detail</a></li>
+            </ul>
+            <p class="menu-label">Transactions</p>
+            <ul class="menu-list">
+              <li><a href="#">Payment Information</a></li>
+              <li><a href="#">Payment History</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="column">
+          <div class="content">
+            <div id="page-signup">
+              <h2>Driver Detail</h2>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">Car Model</label>
+                </div>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="#" id="#">
+                      <option value="#">Ford EcoSport SUV</option>
+                      <option value="#">Ford Everest SUV</option>
+                      <option value="#">Ford Falcon Sedan</option>
+                      <option value="#">Ford Falcon Ute</option>
+                      <option value="#">Ford Fiesta Hatch</option>
+                      <option value="#">Ford Kuga SUV</option>
+                      <option value="#">Ford Focus Sedan</option>
+                      <option value="#">Toyota Yaris</option>
+                      <option value="#">Toyota Prius</option>
+                      <option value="#">Toyota Prius v</option>
+                      <option value="#">Toyota Prius c i-Tech</option>
+                      <option value="#">Toyota Camry</option>
+                      <option value="#">Toyota 86</option>
+                      <option value="#">Toyota Aurion</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="control is-horizontal">
+                <div class="control-label">&nbsp;</div>
+                <div class="control"><img src="http://i.imgur.com/pdLw6Gk.png" alt="" style="width:502px; height: 200px;"></div>
+              </div>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">Capacity</label>
+                </div>
+                <div class="control">
+                  <input type="text" value="3" class="input">
+                </div>
+              </div>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">Driver License</label>
+                </div>
+                <div class="control">
+                  <input type="text" value="04069123456" class="input">
+                </div>
+              </div>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">License Plate</label>
+                </div>
+                <div class="control">
+                  <input type="text" value="AA1020" class="input">
+                </div>
+              </div>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">Last Service Date </label>
+                </div>
+                <div class="control">
+                  <input type="text" value="30/07/2016" class="input">
+                </div>
+              </div>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">Payment Detail</label>
+                </div>
+                <div class="control">
+                  <textarea placeholder="Your payment detail" class="textarea"></textarea>
+                </div>
+              </div>
+              <h2>Taxi Detail</h2>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">Are you taxi?</label>
+                </div>
+                <div class="control">
+                  <p class="push">
+                    <label class="radio">
+                      <input type="radio" name="question" value="yes" checked="checked">    Yes
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="question" value="no">    No
+                    </label>
+                  </p>
+                </div>
+              </div>
+              <div class="taxi-info">
+                <div class="control is-horizontal">
+                  <div class="control-label">
+                    <label class="label">Driver ID</label>
+                  </div>
+                  <div class="control">
+                    <input type"text value="001030201" class="input">
+                  </div>
+                </div>
+                <div class="control is-horizontal">
+                  <div class="control-label">
+                    <label class="label">Taxi ID</label>
+                  </div>
+                  <div class="control">
+                    <input type"text value="209591" class="input">
+                  </div>
+                </div>
+              </div>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">&nbsp;</label>
+                </div>
+                <div class="control">
+                  <button class="button is-success">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>&copy; Copyright 2016 <a href="index.html">Ride with Me</a>. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD-imT9j3NzqFW2EQplw9na_r13tptUXgA",
+        authDomain: "mastercard-hack.firebaseapp.com",
+        databaseURL: "https://mastercard-hack.firebaseio.com",
+        storageBucket: "mastercard-hack.appspot.com",
+        messagingSenderId: "794522015849"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDycamY0vc0yQq6s3ih0rCaJrIxM1-HIs&amp;libraries=places"></script>
+    <script src="js/locationpicker.jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      $('#home').locationpicker({
+        onchanged: function(currentLocation, radius, isMarkerDropped) {
+          console.log(currentLocation.latitude, currentLocation.longitude)
+        },
+        location: {
+          latitude: -37.81676277922874,
+          longitude: 144.95917619070747
+        },
+        radius: 0,
+        inputBinding: {
+          locationNameInput: $('#home-address')
+        },
+        zoom: 18,
+        enableAutocomplete: true
+      });
+      $('#work').locationpicker({
+        onchanged: function(currentLocation, radius, isMarkerDropped) {
+          console.log(currentLocation.latitude, currentLocation.longitude)
+        },
+        location: {
+          latitude: -37.9179738,
+          longitude: 145.03256080000006
+        },
+        radius: 0,
+        inputBinding: {
+          locationNameInput: $('#work-address')
+        },
+        zoom: 18,
+        enableAutocomplete: true
+      });
+    </script>
+  </body>
+</html>
