@@ -10,6 +10,7 @@ $(document).ready(function() {
   });
 
   $('.open-dropdown').on('click', function() {
+    $('.dropdown').hide();
     $(this).find('.dropdown').fadeToggle();
   });
 });
