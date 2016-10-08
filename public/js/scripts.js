@@ -8,6 +8,10 @@ $(document).ready(function() {
       $('.taxi-info').slideUp();
     }
   });
+
+  $('.open-dropdown').on('click', function() {
+    $(this).find('.dropdown').fadeToggle();
+  });
 });
 
 
