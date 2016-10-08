@@ -11,49 +11,49 @@ $(document).ready(function() {
 });
 
 
-// FB Authentication
-var provider = new firebase.auth.GoogleAuthProvider();
-var $name = document.getElementById('name');
-var $login = document.getElementById('login');
-$login.onclick = function() {
-  var userprofile = firebase.auth().currentUser;
-  if(userprofile) {
-    // Sign Out
-    firebase.auth().signOut().then(function() {
-      console.log('Signed Out');
-    }, function(error) {
-      console.error('Sign Out Error', error);
-    });
-  } else {
-    // Sign In
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      // var token = result.credential.accessToken;
-      // The signed-in user info.
-      // var user = result.user;
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-    });
-  }
-}
+// // FB Authentication
+// var provider = new firebase.auth.GoogleAuthProvider();
+// var $name = document.getElementById('name');
+// var $login = document.getElementById('login');
+// $login.onclick = function() {
+//   var userprofile = firebase.auth().currentUser;
+//   if(userprofile) {
+//     // Sign Out
+//     firebase.auth().signOut().then(function() {
+//       console.log('Signed Out');
+//     }, function(error) {
+//       console.error('Sign Out Error', error);
+//     });
+//   } else {
+//     // Sign In
+//     firebase.auth().signInWithPopup(provider).then(function(result) {
+//       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+//       // var token = result.credential.accessToken;
+//       // The signed-in user info.
+//       // var user = result.user;
+//     }).catch(function(error) {
+//       // Handle Errors here.
+//       var errorCode = error.code;
+//       var errorMessage = error.message;
+//       // The email of the user's account used.
+//       var email = error.email;
+//       // The firebase.auth.AuthCredential type that was used.
+//       var credential = error.credential;
+//     });
+//   }
+// }
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // Sign In
-    $name.textContent = ' ' + user.displayName;
-    $login.textContent = 'Log Out';
-  } else {
-    // Sign Out
-    $name.textContent = '';
-    $login.textContent = 'Log In';
-  }
-});
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     // Sign In
+//     $name.textContent = ' ' + user.displayName;
+//     $login.textContent = 'Log Out';
+//   } else {
+//     // Sign Out
+//     $name.textContent = '';
+//     $login.textContent = 'Log In';
+//   }
+// });
 
 
 // Google Maps API Key: AIzaSyDDycamY0vc0yQq6s3ih0rCaJrIxM1-HIs

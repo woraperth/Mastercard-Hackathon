@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta(charset='utf-8')
-    title Account Profile
+    title Account Profile - Ride With Me
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.min.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
     link(rel='stylesheet', href='css/style.css')
@@ -114,3 +114,35 @@ html
                     | Save
 
     include footer
+
+    script.
+      $('#home').locationpicker({
+        onchanged: function(currentLocation, radius, isMarkerDropped) {
+          console.log(currentLocation.latitude, currentLocation.longitude)
+        },
+        location: {
+          latitude: -37.81676277922874,
+          longitude: 144.95917619070747
+        },
+        radius: 0,
+        inputBinding: {
+          locationNameInput: $('#home-address')
+        },
+        zoom: 18,
+        enableAutocomplete: true
+      });
+      $('#work').locationpicker({
+        onchanged: function(currentLocation, radius, isMarkerDropped) {
+          console.log(currentLocation.latitude, currentLocation.longitude)
+        },
+        location: {
+          latitude: -37.9179738,
+          longitude: 145.03256080000006
+        },
+        radius: 0,
+        inputBinding: {
+          locationNameInput: $('#work-address')
+        },
+        zoom: 18,
+        enableAutocomplete: true
+      });

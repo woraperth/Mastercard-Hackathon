@@ -1,0 +1,220 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Find a driver/passenger - Ride With Me
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/style.css')
+  body
+    // Header
+    include header
+
+    // Google Map
+    div#smap(style="width: 100%; height: 400px;")
+
+    // Content
+    .container.main-container
+      .content
+        h3.text-center We found 3 verified drivers who can pick you up.
+    .container.main-container
+      .columns
+        .column
+          .box
+            article.media
+              .media-left
+                figure.image.is-128x128
+                  img(src='http://placehold.it/128x128', alt='Image')
+              .media-content
+                .columns
+                  .column
+                    .content
+                      h3
+                        a.profile-link(href="#") John Smith
+                      p Car: Ford EcoSport<br>Last Maintenance: 07/2016
+                      p
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star-half-o
+                        | &nbsp;&nbsp;(5 ratings)
+                  .column.is-3
+                    a.button.is-block.chat-link(href="#") Chat
+                    a.button.is-block.is-primary.apply-link(href="#") Apply for ride
+          .box
+            article.media
+              .media-left
+                figure.image.is-128x128
+                  img(src='http://placehold.it/128x128', alt='Image')
+              .media-content
+                .columns
+                  .column
+                    .content
+                      h3
+                        a.profile-link(href="#") Claire Kibby
+                      p Car: Toyota Camry<br>Last Maintenance: 09/2016
+                      p
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star-o
+                        | &nbsp;&nbsp;(5 ratings)
+                  .column.is-3
+                    a.button.is-block.chat-link(href="#") Chat
+                    a.button.is-block.is-primary.apply-link(href="#") Apply for ride
+          .box
+            article.media
+              .media-left
+                figure.image.is-128x128
+                  img(src='http://placehold.it/128x128', alt='Image')
+              .media-content
+                .columns
+                  .column
+                    .content
+                      h3
+                        a.profile-link(href="#") Daniel Pownall
+                      p Car: Toyota Prius<br>Last Maintenance: 03/2016
+                      p
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star
+                        i.fa.fa-star-half-o
+                        i.fa.fa-star-o
+                        | &nbsp;&nbsp;(5 ratings)
+                  .column.is-3
+                    a.button.is-block.chat-link(href="#") Chat
+                    a.button.is-block.is-primary.apply-link(href="#") Apply for ride
+
+    .modal.profile-modal
+      .modal-background
+      .modal-card
+        header.modal-card-head
+          p.modal-card-title Driver Profile
+          button.delete
+        section.modal-card-body
+          .content
+            p
+              i.fa.fa-star
+              i.fa.fa-star
+              i.fa.fa-star
+              i.fa.fa-star-half-o
+              i.fa.fa-star-o
+              | &nbsp;&nbsp;(5 ratings)
+            p Car: Toyota Prius<br>Capacity: 3 Seats<br>Last Maintenance: 03/2016
+            p Home Address: 320 Centre Road, Bentleigh, Victria 3204<br>Work Address: 8 Whiteman St, Southbank VIC 3006
+            p Available Date: Monday, Tuesday, Wednesday, Thursday, Friday<br>Available Time: 08:00 - 08:30 AM
+            h3 Latest Reviews
+            .content
+              blockquote Enjoy the ride! Will definitely go with him again.<br>- Nick (20/09/2016)
+              blockquote Great service, fantastic advice and good value. I will definitely return and recommend everyone give them a go. Thanks!<br>- Shelia (16/09/2016)
+              blockquote Awesome service. Couldn't get any better.<br>- Sarah (15/09/2016)
+        footer.modal-card-foot
+
+    .modal.chat-modal
+      .modal-background
+      .modal-card
+        header.modal-card-head
+          p.modal-card-title Message to Driver
+          button.delete
+        section.modal-card-body
+          .control.is-horizontal
+            .control-label
+              label.label To
+            .control
+              input.input(value="Claire Kibby" disabled="disabled")
+          .control.is-horizontal
+            .control-label
+              label.label Message
+            .control
+              textarea.textarea(placeholder="Your message...")
+          .control.is-horizontal
+            .control-label
+              label.label &nbsp;
+            .control
+              button.button.is-success
+                | Send Message
+        footer.modal-card-foot
+    .modal.apply-modal
+      .modal-background
+      .modal-card
+        header.modal-card-head
+          p.modal-card-title We have notify the driver.
+          button.delete
+        section.modal-card-body
+          .content
+            p Almost there! The driver will get back to you within 24 hours.
+        footer.modal-card-foot
+
+
+    include footer
+
+    script.
+      $(document).ready(function() {
+        $('.profile-link').on('click', function() {
+          $('.profile-modal').fadeIn();
+          return false;
+        });
+        $('.chat-link').on('click', function() {
+          $('.chat-modal').fadeIn();
+          return false;
+        });
+        $('.apply-link').on('click', function() {
+          $('.apply-modal').fadeIn();
+          return false;
+        });
+
+        $('.modal-background, .delete').on('click', function() {
+          $('.modal').hide();
+          return false;
+        })
+      });
+
+      var smap;
+      function initMap() {
+        var pointB = new google.maps.LatLng(-37.87, 144.95917619070747);
+        var pointA = new google.maps.LatLng(-37.9179738, 145.03256080000006);
+        var myOptions = {
+         zoom: 15,
+         center: pointA
+        },
+        map = new google.maps.Map(document.getElementById('smap'), myOptions);
+
+        // get route from A to B
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(map);
+        calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+
+        // Create marker 
+        var marker = new google.maps.Marker({
+          map: map,
+          position: new google.maps.LatLng(-37.9179738, 145.03256080000006),
+          title: ''
+        });
+
+        // Add circle overlay and bind to marker
+        var circle = new google.maps.Circle({
+          map: map,
+          radius: 1000,    // 10 miles in metres
+          fillColor: '#AAAA00'
+        });
+        circle.bindTo('center', marker, 'position');
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+        directionsService.route({
+          origin: pointA,
+          destination: pointB,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+      initMap();

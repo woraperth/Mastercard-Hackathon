@@ -14,9 +14,9 @@
       <div class="hero-head">
         <header class="nav">
           <div class="container">
-            <div class="nav-left"><a class="nav-item">
+            <div class="nav-left"><a href="index.html" class="nav-item">
                 <h1>Ride with me</h1></a></div><span class="nav-toggle"><span></span><span></span><span></span></span>
-            <div class="nav-right nav-menu"><a class="nav-item is-active">Home</a><a class="nav-item">How it works?</a><a class="nav-item">About Us</a><span class="nav-item"><a href="account.html" class="button is-primary is-inverted"><i class="fa fa-gear">&nbsp;</i><span>Account</span></a></span></div>
+            <div class="nav-right nav-menu"><a href="search.html" class="nav-item is-active">Find a passenger</a><a class="nav-item"><i class="fa fa-bell"></i></a><a class="nav-item"><i class="fa fa-comment-o"></i></a><span class="nav-item"><a href="account.html" class="button is-primary is-inverted"><i class="fa fa-gear">&nbsp;</i><span>Account</span></a></span></div>
           </div>
         </header>
       </div>
@@ -122,54 +122,10 @@
         </div>
       </div>
     </footer>
-    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyD-imT9j3NzqFW2EQplw9na_r13tptUXgA",
-        authDomain: "mastercard-hack.firebaseapp.com",
-        databaseURL: "https://mastercard-hack.firebaseio.com",
-        storageBucket: "mastercard-hack.appspot.com",
-        messagingSenderId: "794522015849"
-      };
-      firebase.initializeApp(config);
-    </script>
     <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDycamY0vc0yQq6s3ih0rCaJrIxM1-HIs&amp;libraries=places"></script>
     <script src="js/locationpicker.jquery.js"></script>
     <script src="js/scripts.js"></script>
-    <script>
-      $('#home').locationpicker({
-        onchanged: function(currentLocation, radius, isMarkerDropped) {
-          console.log(currentLocation.latitude, currentLocation.longitude)
-        },
-        location: {
-          latitude: -37.81676277922874,
-          longitude: 144.95917619070747
-        },
-        radius: 0,
-        inputBinding: {
-          locationNameInput: $('#home-address')
-        },
-        zoom: 18,
-        enableAutocomplete: true
-      });
-      $('#work').locationpicker({
-        onchanged: function(currentLocation, radius, isMarkerDropped) {
-          console.log(currentLocation.latitude, currentLocation.longitude)
-        },
-        location: {
-          latitude: -37.9179738,
-          longitude: 145.03256080000006
-        },
-        radius: 0,
-        inputBinding: {
-          locationNameInput: $('#work-address')
-        },
-        zoom: 18,
-        enableAutocomplete: true
-      });
-    </script>
     <script src="https://test-gateway.mastercard.com/checkout/version/36/checkout.js" data-error="errorCallback" data-cancel="cancelCallback"></script>
     <script type="text/javascript">
       function errorCallback(error) {
