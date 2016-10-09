@@ -70,7 +70,12 @@ html
                   label.label Estimated people arriving at work
                 .control
                   .content
-                    h3.push.pdCount &nbsp;
+                    div
+                      h3.push.pdCount &nbsp;
+                      .notification.is-primary
+                        h3 How many people might need a ride to work.<br>
+                        p (Data from the City of Melbourne's Open Data)
+
 
               .control.is-horizontal
                 .control-label
@@ -190,7 +195,7 @@ html
                   shortName = data[i][16];
                   shortPedes = data[i][17];
 
-                  $('.pdCount').html("<span>" + shortPedes + " people</span> (from the City of Melbourne's Open Data)");
+                  $('.pdCount').html("<span>" + shortPedes + " people</span>");
                   break;
                 }
               }

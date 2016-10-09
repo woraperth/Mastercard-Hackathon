@@ -96,7 +96,13 @@
                 </div>
                 <div class="control">
                   <div class="content">
-                    <h3 class="push pdCount">&nbsp;</h3>
+                    <div>
+                      <h3 class="push pdCount">&nbsp;</h3>
+                      <div class="notification is-primary">
+                        <h3>How many people might need a ride to work.<br></h3>
+                        <p>(Data from the City of Melbourne's Open Data)</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -241,7 +247,7 @@
                   shortName = data[i][16];
                   shortPedes = data[i][17];
       
-                  $('.pdCount').html("<span>" + shortPedes + " people</span> (from the City of Melbourne's Open Data)");
+                  $('.pdCount').html("<span>" + shortPedes + " people</span>");
                   break;
                 }
               }
