@@ -1,0 +1,89 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Rides this week - Ride With Me
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/style.css')
+  body
+    // Header
+    include header
+
+    // Content
+    .container.main-container
+      .columns
+        .column.is-3
+          aside.menu
+            p.menu-label
+              | General
+            ul.menu-list
+              li
+                a(href='account.html') Account Profile
+              li
+                a(href='driver.html') Driver Detail
+            p.menu-label
+              | Your rides
+            ul.menu-list
+              li
+                a.is-active(href='ride.html') Rides this week
+
+        .column
+          .content
+            h3 Your ride detail
+            .control.is-horizontal
+              .control-label
+                label.label From:
+              .control
+                p.push 300 Centre Road, Bentleigh, Victoria 3204.
+
+            .control.is-horizontal
+              .control-label
+                label.label To:
+              .control
+                p.push 270 Flinders Lane, CBD, Melbourne
+
+            .control.is-horizontal
+              .control-label
+                label.label Date:
+              .control
+                p.push Monday, Tuesday, Wednesday, Thursday, Friday
+
+            .control.is-horizontal
+              .control-label
+                label.label Pickup Time:
+              .control
+                p.push 7:30 AM
+
+            .control.is-horizontal
+              .control-label
+                label.label Arrival Time (Estimated):
+              .control
+                p.push 8:00 AM
+
+            h3 Your driver detail
+            .control.is-horizontal
+              .control-label
+                label.label Name:
+              .control
+                p.push Joe Bross
+
+            .control.is-horizontal
+              .control-label
+                label.label Number Plate:
+              .control
+                p.push AA3123
+
+            .control.is-horizontal
+              .control-label
+                label.label Phone:
+              .control
+                p.push 04061293112
+
+            .control.is-horizontal
+              .control-label
+                label.label E-mail:
+              .control
+                p.push joebross@gmail.com
+
+    include footer

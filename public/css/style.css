@@ -178,3 +178,7 @@
   border-radius: 50%;
   display: block;
 }
+
+.pdCount span {
+  font-weight: bold;
+}

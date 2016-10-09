@@ -1,19 +1,14 @@
 [debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/local/Cellar/node/6.2.0/bin/node /usr/local/bin/firebase deploy
+[debug] Command:      /usr/local/Cellar/node/6.2.0/bin/node /usr/local/bin/firebase serve
 [debug] CLI Version:  3.0.8
 [debug] Platform:     darwin
 [debug] Node Version: v6.2.0
-[debug] Time:         Sun Oct 09 2016 10:28:49 GMT+1100 (AEDT)
+[debug] Time:         Sun Oct 09 2016 10:31:45 GMT+1100 (AEDT)
 [debug] ----------------------------------------------------------------------
 [debug] 
-[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/mastercard-hack 
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/mastercard-hack/tokens 
-[debug] <<< HTTP RESPONSE 200
+[info] Starting Firebase development server...
 [info] 
-[info] === Deploying to 'mastercard-hack'...
+[info] Project Directory: /Applications/MAMP/htdocs/firebase/mastercard
+[info] Public Directory: public
 [info] 
-[info] i  deploying database, hosting
-[info] ✔  database: rules ready to deploy.
-[info] i  hosting: preparing public directory for upload...
+[info] Server listening at: http://localhost:5000

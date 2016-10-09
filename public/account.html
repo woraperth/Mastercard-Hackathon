@@ -28,10 +28,14 @@
       <div class="columns">
         <div class="column is-3">
           <aside class="menu">
-            <p class="menu-label">General</p>
+            <p class="menu-label">Account Detail</p>
             <ul class="menu-list">
               <li><a href="account.html" class="is-active">Account Profile</a></li>
               <li><a href="driver.html">Driver Detail</a></li>
+            </ul>
+            <p class="menu-label">Your rides</p>
+            <ul class="menu-list">
+              <li><a href="ride.html">Rides this week</a></li>
             </ul>
           </aside>
         </div>
@@ -83,6 +87,16 @@
                   <div>
                     <input id="work-address" type="text" class="input">
                     <div id="work" style="width: 500px; height: 300px;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="control is-horizontal">
+                <div class="control-label">
+                  <label class="label">Estimated people arriving at work</label>
+                </div>
+                <div class="control">
+                  <div class="content">
+                    <h3 class="push pdCount">&nbsp;</h3>
                   </div>
                 </div>
               </div>
@@ -157,35 +171,85 @@
     <script src="js/locationpicker.jquery.js"></script>
     <script src="js/scripts.js"></script>
     <script>
-      $('#home').locationpicker({
-        onchanged: function(currentLocation, radius, isMarkerDropped) {
-          console.log(currentLocation.latitude, currentLocation.longitude)
-        },
-        location: {
-          latitude: -37.81676277922874,
-          longitude: 144.95917619070747
-        },
-        radius: 0,
-        inputBinding: {
-          locationNameInput: $('#home-address')
-        },
-        zoom: 18,
-        enableAutocomplete: true
-      });
-      $('#work').locationpicker({
-        onchanged: function(currentLocation, radius, isMarkerDropped) {
-          console.log(currentLocation.latitude, currentLocation.longitude)
-        },
-        location: {
-          latitude: -37.9179738,
-          longitude: 145.03256080000006
-        },
-        radius: 0,
-        inputBinding: {
-          locationNameInput: $('#work-address')
-        },
-        zoom: 18,
-        enableAutocomplete: true
+      $(document).ready(function() {
+        var startLat, startLng, endLat, endLng;
+      
+        startLat = -37.9179738;
+        startLng = 145.03256080000006;
+        endLat = -37.8136254240211;
+        endLng = 144.973235916778;
+      
+        $('#home').locationpicker({
+          onchanged: function(currentLocation, radius, isMarkerDropped) {
+            console.log(currentLocation.latitude, currentLocation.longitude);
+          },
+          location: {
+            latitude: startLat,
+            longitude: startLng
+          },
+          radius: 0,
+          inputBinding: {
+            locationNameInput: $('#home-address')
+          },
+          zoom: 18,
+          enableAutocomplete: true
+        });
+        $('#work').locationpicker({
+          onchanged: function(currentLocation, radius, isMarkerDropped) {
+            endLat = currentLocation.latitude;
+            endLong = currentLocation.longitude;
+            getPedesCount(startLat, startLng, endLat, endLng);
+          },
+          location: {
+            latitude: endLat,
+            longitude: endLng
+          },
+          radius: 0,
+          inputBinding: {
+            locationNameInput: $('#work-address')
+          },
+          zoom: 18,
+          enableAutocomplete: true
+        });
+      
+        function getPedesCount(aLat, aLng, bLat, bLng) {
+          // Find Sensor ID
+          $.getJSON('data/psensor.json', function(value, key) {
+            var data = value.data;
+            var arrayLength = data.length;
+            var shortDist = Infinity, shortID = 'Cannot Locate';
+            for (var i = 0; i < arrayLength; i++) {
+              var thisSenID = data[i][8];
+              var thisLat = data[i][16];
+              var thisLng = data[i][17];
+              // Compare distance to work
+              var thisDist = Math.sqrt(Math.pow(bLat-thisLat, 2), Math.pow(bLng-thisLng, 2));
+              if(thisDist < shortDist) {
+                shortDist = thisDist;
+                shortID = thisSenID;
+              }
+            }
+            console.log(shortDist, shortID);
+      
+            // Find pedestrian in the area
+            var pdsobj = $.getJSON('data/pcount.json', function(value, key) {
+              var data = value.data;
+              // Search for sensor ID
+              var arrayLength = data.length;
+              for (var i = 0; i < arrayLength; i++) {
+                if(shortID == data[i][15]) {
+                  shortName = data[i][16];
+                  shortPedes = data[i][17];
+      
+                  $('.pdCount').html("<span>" + shortPedes + " people</span> (from the City of Melbourne's Open Data)");
+                  break;
+                }
+              }
+            });
+          });
+        }
+      
+        getPedesCount(startLat, startLng, endLat, endLng);
       });
     </script>
   </body>

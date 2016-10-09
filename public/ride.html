@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rides this week - Ride With Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Header-->
+    <section class="hero is-primary">
+      <!-- Hero header: will stick at the top-->
+      <div class="hero-head">
+        <header class="nav">
+          <div class="container">
+            <div class="nav-left"><a href="index.html" class="nav-item">
+                <h1>Ride with me</h1></a></div><span class="nav-toggle"><span></span><span></span><span></span></span>
+            <div class="nav-right nav-menu"><a href="search.html" class="nav-item">Find a driver</a><a href="contact.html" class="nav-item">Contact</a><a class="nav-item open-dropdown"><i class="fa fa-bell"></i>
+                <div class="dropdown">You have no notification.</div></a><a class="nav-item open-dropdown"><i class="fa fa-comment-o"></i>
+                <div class="dropdown">You have no message.</div></a><span class="nav-item"><a href="account.html" class="button is-primary is-inverted"><i class="fa fa-gear">&nbsp;</i><span>Account</span></a></span></div>
+          </div>
+        </header>
+      </div>
+    </section>
+    <!-- Content-->
+    <div class="container main-container">
+      <div class="columns">
+        <div class="column is-3">
+          <aside class="menu">
+            <p class="menu-label">General</p>
+            <ul class="menu-list">
+              <li><a href="account.html">Account Profile</a></li>
+              <li><a href="driver.html">Driver Detail</a></li>
+            </ul>
+            <p class="menu-label">Your rides</p>
+            <ul class="menu-list">
+              <li><a href="ride.html" class="is-active">Rides this week</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="column">
+          <div class="content">
+            <h3>Your ride detail</h3>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">From:</label>
+              </div>
+              <div class="control">
+                <p class="push">300 Centre Road, Bentleigh, Victoria 3204.</p>
+              </div>
+            </div>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">To:</label>
+              </div>
+              <div class="control">
+                <p class="push">270 Flinders Lane, CBD, Melbourne</p>
+              </div>
+            </div>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">Date:</label>
+              </div>
+              <div class="control">
+                <p class="push">Monday, Tuesday, Wednesday, Thursday, Friday</p>
+              </div>
+            </div>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">Pickup Time:</label>
+              </div>
+              <div class="control">
+                <p class="push">7:30 AM</p>
+              </div>
+            </div>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">Arrival Time (Estimated):</label>
+              </div>
+              <div class="control">
+                <p class="push">8:00 AM</p>
+              </div>
+            </div>
+            <h3>Your driver detail</h3>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">Name:</label>
+              </div>
+              <div class="control">
+                <p class="push">Joe Bross</p>
+              </div>
+            </div>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">Number Plate:</label>
+              </div>
+              <div class="control">
+                <p class="push">AA3123</p>
+              </div>
+            </div>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">Phone:</label>
+              </div>
+              <div class="control">
+                <p class="push">04061293112</p>
+              </div>
+            </div>
+            <div class="control is-horizontal">
+              <div class="control-label">
+                <label class="label">E-mail:</label>
+              </div>
+              <div class="control">
+                <p class="push">joebross@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>&copy; Copyright 2016 <a href="index.html">Ride with Me</a>. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDycamY0vc0yQq6s3ih0rCaJrIxM1-HIs&amp;libraries=places"></script>
+    <script src="js/locationpicker.jquery.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
