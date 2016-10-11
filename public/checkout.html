@@ -125,38 +125,9 @@
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDycamY0vc0yQq6s3ih0rCaJrIxM1-HIs&amp;libraries=places"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=XXXXXXXXX&amp;libraries=places"></script>
     <script src="js/locationpicker.jquery.js"></script>
     <script src="js/scripts.js"></script>
     <script src="https://test-gateway.mastercard.com/checkout/version/36/checkout.js" data-error="errorCallback" data-cancel="cancelCallback"></script>
-    <script type="text/javascript">
-      function errorCallback(error) {
-        console.log(JSON.stringify(error));
-      }
-      function cancelCallback() {
-        console.log('Payment cancelled');
-      }
-      Checkout.configure({
-        merchant: 'TESTHACK30',
-        order: {
-          amount: function() {
-          //Dynamic calculation of amount
-          return 15.3;
-        },
-        currency: 'AUD',
-        description: 'Ordered goods',
-        id: '100'
-        },
-        interaction: {
-          merchant: {
-            name: 'Ride with Joe',
-            address: {
-              line1: '200 Sample St',
-              line2: '1234 Example Town'
-            }
-          }
-        }
-      });
-    </script>
   </body>
 </html>

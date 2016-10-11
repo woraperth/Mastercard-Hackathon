@@ -98,31 +98,3 @@ html
     include footer
 
     script(src='https://test-gateway.mastercard.com/checkout/version/36/checkout.js', data-error='errorCallback', data-cancel='cancelCallback')
-    script(type='text/javascript').
-      function errorCallback(error) {
-        console.log(JSON.stringify(error));
-      }
-      function cancelCallback() {
-        console.log('Payment cancelled');
-      }
-      Checkout.configure({
-        merchant: 'TESTHACK30',
-        order: {
-          amount: function() {
-          //Dynamic calculation of amount
-          return 15.3;
-        },
-        currency: 'AUD',
-        description: 'Ordered goods',
-        id: '100'
-        },
-        interaction: {
-          merchant: {
-            name: 'Ride with Joe',
-            address: {
-              line1: '200 Sample St',
-              line2: '1234 Example Town'
-            }
-          }
-        }
-      });
